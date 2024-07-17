@@ -43,7 +43,7 @@ def inference(args):
     cap = cv2.VideoCapture(args.video_path)
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-    out = cv2.VideoWriter(args.output_path, cv2.VideoWriter_fourcc(*"MJPG"), int(cap.get(cv2.CAP_PROP_FPS)),
+    out = cv2.VideoWriter(args.output_path, cv2.VideoWriter_fourcc(*"avc1"), int(cap.get(cv2.CAP_PROP_FPS)),
                           (width, height))
     softmax = nn.Softmax()
     while cap.isOpened():
